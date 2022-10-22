@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17721f0f-5698-4ce9-b436-cda4dbbd3cdf" name="Changes" comment="Q904 水果成篮 滑动窗口题，用left和right两个指针模拟" />
+    <list default="true" id="17721f0f-5698-4ce9-b436-cda4dbbd3cdf" name="Changes" comment="Q97 交错字符串 字符串dp问题">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,9 +43,16 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Q1235">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="LeetCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Q1235" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Q1235" />
       <module name="LeetCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -58,6 +67,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Q1235" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Q904" />
       </list>
@@ -74,6 +84,8 @@
       <workItem from="1665887600284" duration="2804000" />
       <workItem from="1665966246829" duration="2870000" />
       <workItem from="1665982633005" duration="1585000" />
+      <workItem from="1665990369905" duration="131000" />
+      <workItem from="1666402526612" duration="1790000" />
     </task>
     <task id="LOCAL-00001" summary="Q886可能的二分法 二分图题">
       <created>1665891877932</created>
@@ -96,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665969126747</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Q97 交错字符串 字符串dp问题">
+      <created>1665990479201</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665990479201</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,12 +150,12 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="HEAD" />
+                  <option value="master" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="master" />
+                  <option value="HEAD" />
                 </option>
               </RecentGroup>
             </list>
@@ -148,6 +167,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Q886可能的二分法 二分图题" />
     <MESSAGE value="Q904 水果成篮 滑动窗口题，用left和right两个指针模拟" />
-    <option name="LAST_COMMIT_MESSAGE" value="Q904 水果成篮 滑动窗口题，用left和right两个指针模拟" />
+    <MESSAGE value="Q97 交错字符串 字符串dp问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="Q97 交错字符串 字符串dp问题" />
   </component>
 </project>
