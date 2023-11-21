@@ -518,3 +518,214 @@ class Solution {
 }
 ```
 
+##### 5.三数之和（15）
+
+![image-20231121084430505](image-20231121084430505.png)
+
+**思路：**排序+双指针，排序之后就可以仿照两数之和的问题，`i`指针从前往后，`j`指针从后往前遍历，主要还要再处理不可重复，使用`set`记录每一次用过的元素。
+
+```java
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+    	//排序
+        Arrays.sort(nums);
+        //过滤已经用过的元素
+        Set<Integer> set = new HashSet<>();
+        List<List<Integer>> res = new LinkedList<>();
+        for(int i = 0; i < nums.length; i++){
+            if(set.contains(nums[i])){
+                continue;
+            }
+            else{
+                set.add(nums[i]);
+                int j = i+1, k = nums.length-1;
+                while(j < k){
+                	//符合题意，加入res
+                    if(nums[i]+nums[j]+nums[k] == 0){
+                        List<Integer> temp = new LinkedList<>();
+                        temp.add(nums[i]);
+                        temp.add(nums[j]);
+                        temp.add(nums[k]);
+                        res.add(temp);
+                        int preLeft = nums[j];
+                        j++;
+                        //要防止i指针和j指针的下一个和这一个全都相同，这样也会出现重复
+                        while(j < k && preLeft == nums[j]){
+                            j++;
+                        }
+                         k--;
+                    }
+                    else if(nums[i]+nums[j]+nums[k] < 0){
+                        j++;
+                    }
+                    else{
+                        k--;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+}
+```
+
+#### 三、滑动窗口
+
+##### 1.长度最小的子数组（209）
+
+![image-20231121085813842](image-20231121085813842.png)
+
+**思路：**滑动窗口，也可以认为是双指针，指针`i`指向子数组左侧，`j`指向子数组右侧，遍历指针`j`，每次增加一个数时，判断`i`要右移到哪一步，注意子数组的长度是`j-i+1`。
+
+```java
+class Solution {
+    public int minSubArrayLen(int target, int[] nums) {
+        int sum = 0, i = 0, j = 0, res = Integer.MAX_VALUE;
+        while(j < nums.length){
+        	//指针j所指的数加入子数组
+            sum += nums[j];
+            //指针i右移直到和值小于目标数
+            while(sum >= target){
+                res = Math.min(res, j-i+1);
+                sum -= nums[i];
+                i++;
+            }
+            j++;
+        }
+        return res == Integer.MAX_VALUE? 0 : res;
+    }
+}
+```
+
+##### 2.无重复字符的最长字串（3）
+
+![image-20231121104241966](image-20231121104241966.png)
+
+**思路：**滑动窗口，或者理解为双指针，和上题基本相同，这一题要记录好已经出现的字符即可
+
+```java
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+    	//set记录已经存在的字符
+        HashSet<Character> chars = new HashSet<>();
+        int start = 0;
+        int end = 0;
+        int res = 0;
+        while(end < s.length()){
+            char c = s.charAt(end);
+            //当前字符保证不存在
+            while(chars.contains(c)){
+                chars.remove(s.charAt(start));
+                start++;
+            }
+            //添加当前字符，更新返回值
+            chars.add(c);
+            res = Math.max(res, end-start+1);
+            end++;
+        }
+        return res;
+    }
+}
+```
+
+#### 四、矩阵
+
+##### 1.有效的数独（36）
+
+![image-20231121105117043](image-20231121105117043.png)
+
+![image-20231121105155535](image-20231121105155535.png)
+
+**思路：**模拟，记录每一种是否满足即可，可以使用hash结构一次遍历全部记录
+
+```java
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        int[][] rows = new int[9][9];
+        int[][] columns = new int[9][9];
+        int[][][] subboxes = new int[3][3][9];
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                char c = board[i][j];
+                if (c != '.') {
+                    int index = c - '0' - 1;
+                    //注意i和j的区分
+                    rows[i][index]++;
+                    columns[j][index]++;
+                    subboxes[i / 3][j / 3][index]++;
+                    if (rows[i][index] > 1 || columns[j][index] > 1 || subboxes[i / 3][j / 3][index] > 1) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}
+```
+
+##### 2.螺旋矩阵（54）
+
+##### ![image-20231121154701500](image-20231121154701500.png)
+
+![image-20231121154731147](image-20231121154731147.png)
+
+**思路：**模拟，记录每一次遍历的移动方向和边界，在遇到边界时改变移动方向。
+
+```java
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        //direction为方向，boundary为该方向的移动边界，0向右，1向下，2向左，3向上
+        int direction = 0, i = 0, j = 0;
+        int[] boundary = new int[]{n-1, m-1, 0, 1};
+        List<Integer> list = new LinkedList<>();
+        for(int k = 0; k < m*n; k++){
+            list.add(matrix[i][j]);
+            //当前前进方向为向右，如果到达边界，则会向下，后面类似
+            if(direction == 0){
+                if(j == boundary[0]){
+                    direction = 1;
+                    boundary[0]--;
+                    i++;
+                }
+                else{
+                    j++;
+                }
+            }
+            else if(direction == 1){
+                if(i == boundary[1]){
+                    direction = 2;
+                    boundary[1]--;
+                    j--;
+                }
+                else{
+                    i++;
+                }
+            }
+            else if(direction == 2){
+                if(j == boundary[2]){
+                    direction = 3;
+                    boundary[2]++;
+                    i--;
+                }
+                else{
+                    j--;
+                }
+            }else{
+                if(i == boundary[3]){
+                    direction = 0;
+                    boundary[3]++;
+                    j++;
+                }
+                else{
+                    i--;
+                }
+            }
+        }
+        return list;
+    }
+}
+```
+
