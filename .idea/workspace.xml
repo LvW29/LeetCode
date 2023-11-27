@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="17721f0f-5698-4ce9-b436-cda4dbbd3cdf" name="Changes" comment="Q97 交错字符串 字符串dp问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VolatoleAtomicityDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VolatoleAtomicityDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,23 +56,30 @@
     "last_opened_file_path": "D:/Work/LeetCode"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.simpleTest.testAdd">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.ThreadPoolDemo">
+    <configuration name="ThreadPoolDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThreadPoolDemo" />
       <module name="LeetCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Q1235" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Q1235" />
+    <configuration name="ThreadPoolDemo (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThreadPoolDemo" />
       <module name="LeetCode" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Q904" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Q904" />
+    <configuration name="ThreadPoolDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThreadPoolDemo" />
+      <module name="LeetCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VolatoleAtomicityDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VolatoleAtomicityDemo" />
       <module name="LeetCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,10 +103,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ThreadPoolDemo" />
+        <item itemvalue="Application.ThreadPoolDemo (2)" />
+        <item itemvalue="Application.ThreadPoolDemo (1)" />
+        <item itemvalue="Application.VolatoleAtomicityDemo" />
         <item itemvalue="JUnit.simpleTest.testAdd" />
-        <item itemvalue="Application.Q1235" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Q904" />
       </list>
     </recent_temporary>
   </component>
